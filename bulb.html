@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Light Bulb ON/OFF</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; margin-top: 30px; }
+  button { padding: 10px 18px; font-size: 16px; margin: 6px; cursor: pointer; }
+  #status { font-size: 20px; font-weight: bold; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h1>JavaScript Light Bulb</h1>
+
+<button onclick="lightOn()">Turn ON</button>
+<button onclick="lightOff()">Turn OFF</button>
+
+<br><br>
+
+<svg id="bulb" width="160" height="240" viewBox="0 0 160 240">
+  <circle id="glass" cx="80" cy="90" r="60" fill="#cccccc" stroke="#555" stroke-width="3"/>
+  <rect x="55" y="140" width="50" height="22" fill="#999" stroke="#555" stroke-width="3"/>
+  <rect x="58" y="164" width="44" height="14" fill="#777" stroke="#555" stroke-width="3"/>
+  <rect x="64" y="180" width="32" height="12" fill="#555"/>
+</svg>
+
+<p id="status">The bulb is OFF</p>
+
+<script>
+function lightOn() {
+  document.getElementById('glass').setAttribute('fill', '#ffe600');
+  document.getElementById('bulb').style.filter = 'drop-shadow(0 0 25px #ffd000)';
+  document.getElementById('status').innerHTML = 'The bulb is ON';
+}
+
+function lightOff() {
+  document.getElementById('glass').setAttribute('fill', '#cccccc');
+  document.getElementById('bulb').style.filter = 'none';
+  document.getElementById('status').innerHTML = 'The bulb is OFF';
+}
+</script>
+
+</body>
+</html>
